@@ -23,7 +23,7 @@ function showProduct(myProduct) {
     //fill in the template
     myCopy.querySelector(".data_name").textContent = myProduct.name;
     //append
-    const parentElement = document.querySelector("section#starter");
+    const parentElement = document.querySelector("section#main");
     parentElement.appendChild(myCopy);
 }
 
