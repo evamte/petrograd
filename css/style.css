@@ -84,7 +84,6 @@ div a:active {
     color: black;
 }
 
-
 .productlist > section {
     display: grid;
     max-width: 1200px;
@@ -98,8 +97,15 @@ div a:active {
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 5px #0000;
     background-color: lightgoldenrodyellow;
+}
+
+.productbody {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 
@@ -133,12 +139,6 @@ article {
     border-radius: 20px;
 }
 
-.number {
-    display: inline-flex;
-    align-items: center;
-}
-
-
 img {
     width: 100%;
     height: auto;
@@ -157,11 +157,18 @@ h3 {
     margin-left: 10px;
 }
 
+.number {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 .prize {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    margin-left: 120px;
+    margin-left: 10px;
 }
 
 .discount {
@@ -169,7 +176,7 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     text-align: right;
-    padding-left: 30px
+    margin-right: 10px;
 }
 
 .soldout {
@@ -188,27 +195,35 @@ h3 {
     margin-left: 45px;
 }
 
-.allergens {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
+.icons {
     text-align: left;
-    margin-top: 0;
-    padding: 0;
-    margin-right: 25px;
-    margin-bottom: 30px;
-    margin-left: 10px;
+    max-width: 25px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .vegetarian {
+    margin-left: 10px;
+    padding-right: 20px;
+}
+
+.dots {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    text-align: left;
-    margin-top: 0;
-    padding: 0;
-    margin-right: 25px;
-    margin-bottom: 20px;
-    margin-left: 10px;
 }
+
+.alcohol {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.laktose {
+    padding-right: 20px;
+}
+
 
 .short {
     font-family: 'Open Sans', sans-serif;
@@ -225,21 +240,21 @@ h3 {
 }
 
 
-button {
+.productbody button {
     margin-top: auto;
-    background: black;
+    background-color: black;
     color: white;
-    padding-left: 50px;
+    border: 0;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-right: 50px;
-
+    margin: 20px;
     font-size: 15px;
-    border: none;
-    justify-content: center;
     border-radius: 15px;
-    margin-left: 70px;
-    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
 
 @media only screen and (min-width: 900px) {
@@ -295,6 +310,4 @@ footer {
 
 }
 
-.hidden {
-    display: none;
-}
+
