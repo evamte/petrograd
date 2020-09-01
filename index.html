@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
 </head>
 
 
@@ -29,29 +30,33 @@
 
 
     <main class="productlist">
-
-            <template id="productTemplate">
-                <article class="product">
-                    <p class="soldout">Sold Out</p>
-                    <img class="product_img" src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" class="center">
-                    <section class="productbody">
-                        <h3 class="name">Giant row with mashed potatoes</h3>
-                        <div class="number">
+        <template id="productTemplate">
+            <article class="product">
+                <img class="product_img" src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" class="center">
+                <p class="number_stars">1</p>
+                <section class="productbody">
+                    <img class="star" src="img/star.svg" alt="" class="center">
+                    <h3 class="name">Giant row with mashed potatoes</h3>
+                    <div class="number">
                         <h4 class="prize"></h4>
-                        <h4 class="discount">disc,-</h4>
-                            </div>
-                        <div class="icons">
+                        <p class="kroner">,-</p>
+                        <h4 class="discount"></h4>
+                    </div>
+                    <div class="icons">
                         <img class="vegetarian hidden" src="img/broccoli.svg" alt="" class="center">
                         <img class="laktose hidden" src="img/dairy-products.svg" alt="" class="center">
-                            <img src="img/alcohol.svg" alt="" class="center"><p class="dots">:</p>
-                            <div class="alcohol"></div>
-                            </div>
-                        <p class="short">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
-                        <p class="long">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
-                        <button>ORDER</button>
-                    </section>
-                </article>
-            </template>
+                        <div class="allergens"></div>
+                        <img src="img/alcohol.svg" alt="" class="center">
+                        <p class="dots">:</p>
+                        <div class="alcohol"></div>
+                        <p class="dots">%</p>
+                    </div>
+                    <p class="short">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
+                    <p class="long">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
+                    <button>ORDER</button>
+                </section>
+            </article>
+        </template>
 
 
     </main>

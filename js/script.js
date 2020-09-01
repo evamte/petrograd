@@ -57,32 +57,28 @@ function showProduct(myProduct) {
     myCopy.querySelector(".short").textContent = myProduct.shortdescription;
     myCopy.querySelector(".long").textContent = myProduct.longdescription;
     myCopy.querySelector(".alcohol").textContent = myProduct.alcohol;
+    myCopy.querySelector(".discount").textContent = myProduct.discount;
 
 
-    //discount
-    if (!myProduct.discount) {
-        myCopy.querySelector(".discount").classList.add("hidden");
-    }
 
     //vegetarian
-        if (myProduct.vegetarian) {
-            myCopy.querySelector(".vegetarian").classList.remove("hidden");
-        }
+    if (myProduct.vegetarian) {
+        myCopy.querySelector(".vegetarian").classList.remove("hidden");
+    }
 
     //laktose
-
     if (myProduct.laktose) {
-            myCopy.querySelector(".laktose").classList.remove("hidden");
-        }
+        myCopy.querySelector(".allergens").classList.remove("hidden");
+    }
     //soldout
-        if (myProduct.soldout) {
-            const p = document.createElement("p");
-            p.textContent = "Sold Out";
-            p.classList.add("soldout");
-            myCopy.querySelector("article").appendChild(p);
-        }
+    if (myProduct.soldout) {
+        const p = document.createElement("p");
+        p.textContent = "Sold Out";
+        p.classList.add("soldout");
+        myCopy.querySelector("article").appendChild(p);
+    }
 
-     const article = myCopy.querySelector("article");
+    const article = myCopy.querySelector("article");
 
     if (myProduct.vegetarian) {
         article.classList.add("vegetarian");
@@ -91,7 +87,7 @@ function showProduct(myProduct) {
     if (myProduct.laktose) {
         article.classList.add("laktose");
     }
-//alcohol
+    //alcohol
     if (myProduct.alcohol) {
         article.classList.add("alcoholic");
     }
