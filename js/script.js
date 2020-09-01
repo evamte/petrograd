@@ -1,4 +1,28 @@
-//fetch API
+function init() {
+    fetch("https://kea-alt-del.dk/t5/api/categories").then(r=> r.json()).then(
+    function (data) {
+        categoriesReceived(data)
+    })
+}
+
+init();
+
+function categoriesReceived (cats) {
+    //createNavigation(cats);
+    createSections(cats);
+}
+
+function createSections(categories) {
+    categories.forEach(category => {
+        const section = document.createElement("section");
+        section.setAttribute("id", category);
+        const h1 = document.createElement("h1");
+        h1.textContent = category;
+        section.appendChild(h1);
+        document.querySelector(".productlist").appendChild(section);
+    })
+}
+//fetch Products
 fetch("https://kea-alt-del.dk/t5/api/productlist")
     .then(function (response){
     console.log(response);
@@ -22,10 +46,14 @@ function showProduct(myProduct) {
     const myCopy = temp.cloneNode(true);
     //fill in the template
     myCopy.querySelector(".name").textContent = myProduct.name;
+    const parentElem = document.querySelector("section#" + myProduct.category);
     //append
-    const parentElem = document.querySelector("section#main");
     parentElem.appendChild(myCopy);
-}
+    }
+
+
+
+
 
 
 

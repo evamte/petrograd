@@ -17,6 +17,10 @@ header a {
     text-shadow: 2px 2px bisque;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -129,6 +133,10 @@ article {
     border-radius: 20px;
 }
 
+.number {
+    display: inline-flex;
+    align-items: center;
+}
 
 
 img {
@@ -153,17 +161,15 @@ h3 {
 .prize {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 120px;
 }
 
 .discount {
     color: red;
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
     font-size: 15px;
-    margin-top: 5px;
+    text-align: right;
+    padding-left: 30px
 }
 
 .soldout {
