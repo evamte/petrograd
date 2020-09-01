@@ -1,10 +1,10 @@
-fetch("https://kea-alt-del.dk/t5/api/")
-    .then(function(response){
+//fetch API
+fetch("https://kea-alt-del.dk/t5/api/productlist")
+    .then(function (response){
     console.log(response);
     return response.json();
 })
-    .then(function(data){
-    console.log(data);
+    .then(function (data){
     dataReceived(data);
 })
 
@@ -21,9 +21,17 @@ function showProduct(myProduct) {
     //clone the template
     const myCopy = temp.cloneNode(true);
     //fill in the template
-    myCopy.querySelector(".data_name").textContent = myProduct.name;
+    myCopy.querySelector(".name").textContent = myProduct.name;
     //append
-    const parentElement = document.querySelector("section#main");
-    parentElement.appendChild(myCopy);
+    const parentElem = document.querySelector("section#main");
+    parentElem.appendChild(myCopy);
 }
+
+
+
+
+
+
+
+
 

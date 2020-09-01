@@ -8,100 +8,110 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    </head>
+</head>
 
+
+
+<body>
     <header>
-            <a href="home.html">PETROGRAD</a>
+        <a href="home.html">PETROGRAD</a>
     </header>
-
-    <body>
-        <nav>
-                <div>
-                    <ul>
-                    <li><a id="active" href="index.html">Courses</a></li>
+    <nav>
+        <div>
+            <ul>
+                <li><a id="active" href="index.html">Courses</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="book.html">Book a table</a></li>
-
-                        </ul>
-                </div>
-        </nav>
-
+            </ul>
+        </div>
+    </nav>
 
 
-<main class="productlist">
 
-    <h1>Main</h1>
-    <section id="main">
-           <template id="productTemplate">
-               <article class="product">
-               <img src="" alt="" class="center">
-                <section class="productbody">
-        <h3>Giant row with mashed potatoes</h3>
-            <h4 class="prize">89,-</h4>
-                <div class="discount"><strong>50,-</strong></div>
-                    <p class="short">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
-                    <p class="long">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
-               <button>ORDER</button>
-                   </section>
+    <main class="productlist">
+
+
+        <section id="main">
+            <h1>Main</h1>
+            <template id="productTemplate">
+                <article class="product">
+                    <p class="soldout">Sold Out</p>
+                    <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" class="center">
+                    <section class="productbody">
+                        <h3 class="name">Giant row with mashed potatoes</h3>
+                        <h4 class="prize">89,-</h4>
+                        <h4 class="discount">dic,-</h4>
+                        <div class="vegetarian">Vegetarian</div>
+                        <p class="short">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
+                        <p class="long">Kæmpe klipfiskerogn med Kartofler og fiskefond.</p>
+                        <button>ORDER</button>
+                    </section>
+                </article>
+            </template>
+        </section>
+
+
+        <section id="sideorder">
+            <h1>Sideorder</h1>
+            <template id="productTemplate">
+                <article class="product">
+                    <img src="imgs/small/ringbroed-sm.jpg" alt="Sideorder" class="center">
+                    <h3>Russian Ringbread</h3>
+                    <div class="prize">29,-</div>
+                    <div class="soldout"><strong>SOLD OUT</strong></div>
+                    <p class="short">Russisk ringbrød bagt med det fineste gryzni-mel fra Gryzkigistan.</p>
+                    <p class="allergens"><strong>Allergens:</strong> Laktose</p>
+                    <p class="vegetarian"><strong>Vegetarian</strong></p>
+                    <button>ORDER</button>
                 </article>
             </template>
         </section>
 
 
 
-    <h1>Sideorder</h1>
-
-    <section id="sideorder">
-            <article id="sideorder" class="column">
-                <img src="imgs/small/ringbroed-sm.jpg" alt="Sideorder" class="center">
-        <h3>Russian Ringbread</h3>
-            <div class="prize">29,-</div>
-                <div class="soldout"><strong>SOLD OUT</strong></div>
-                    <p class="short">Russisk ringbrød bagt med det fineste gryzni-mel fra Gryzkigistan.</p>
+        <section id="starter">
+            <h1>Starters</h1>
+            <template id="productTemplate">
+                <article>
+                    <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="Dessert" class="center">
+                    <h3>Pancakes with caviar</h3>
+                    <div class="prize">79,-</div>
+                    <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
                     <p class="allergens"><strong>Allergens:</strong> Laktose</p>
-                <p class="vegetarian"><strong>Vegetarian</strong></p>
+                    <button>ORDER</button>
+                </article>
+            </template>
+        </section>
+
+
+
+        <section id="dessert">
+            <h1>Desserts</h1>
+            <article>
+                <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="Dessert" class="center">
+                <h3>Pancakes with caviar</h3>
+                <div class="prize">79,-</div>
+                <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
+                <p class="allergens"><strong>Allergens:</strong> Laktose</p>
                 <button>ORDER</button>
-           </article>
+            </article>
         </section>
 
-<h1>Desserts</h1>
-    <section id="dessert">
-           <article>
-               <img src="imgs/small/kaviarpandekager-sm.jpg" alt="Dessert" class="center">
-        <h3>Pancakes with caviar</h3>
-            <div class="prize">79,-</div>
-           <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
-               <p class="allergens"><strong>Allergens:</strong> Laktose</p>
-               <button>ORDER</button>
-    </article>
+
+
+        <section id="drinks">
+            <h1>Drinks</h1>
+            <article>
+                <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="Dessert" class="center">
+                <h3>Pancakes with caviar</h3>
+                <div class="prize">79,-</div>
+                <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
+                <p class="allergens"><strong>Allergens:</strong> Laktose</p>
+                <button>ORDER</button>
+            </article>
         </section>
-
-    <h1>Starters</h1>
-    <section id="starter">
-        <article>
-               <img src="img_folder/kaviarpandekager-sm.jpg" alt="Dessert" class="center">
-        <h3>Pancakes with caviar</h3>
-            <div class="prize">79,-</div>
-           <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
-               <p class="allergens"><strong>Allergens:</strong> Laktose</p>
-               <button>ORDER</button>
-        </article>
-    </section>
-
-    <h1>Drinks</h1>
-    <section id="drinks">
-        <article>
-               <img src="img_folder/kaviarpandekager-sm.jpg" alt="Dessert" class="center">
-        <h3>Pancakes with caviar</h3>
-            <div class="prize">79,-</div>
-           <p class="short">Brændte pandekager med Bordyriske ørne-kaviar.</p>
-               <p class="allergens"><strong>Allergens:</strong> Laktose</p>
-               <button>ORDER</button>
-        </article>
-    </section>
     </main>
 
-        <footer>Website made by Eva Maté</footer>
-</body>
-
-</html>
+    <script src="js/script.js"></script>
+    <footer>Website made by Eva Maté</footer>
+</body></html>
