@@ -289,8 +289,8 @@ h3 {
 @media only screen and (max-width: 599px) {
   body {	display: grid;
     		grid-template-columns: 	1fr 1fr;
-    		grid-template-areas: 	"se se"
-                                    "hd hd"
+    		grid-template-areas: 	"hd hd"
+                                    "se se"
                          			"ma ma"
                                     "ft ft"; }
     header {
