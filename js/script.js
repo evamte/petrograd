@@ -57,18 +57,24 @@ function showProduct(myProduct) {
     myCopy.querySelector(".short").textContent = myProduct.shortdescription;
     myCopy.querySelector(".alcohol").textContent = myProduct.alcohol + "%";
     myCopy.querySelector(".discount").textContent = myProduct.discount + "% off";
-    myCopy.querySelector(".laktose").textContent = myProduct.laktose;
+    myCopy.querySelector(".laktose").textContent = myProduct.allergens;
 
+
+    //discount
+    if (myProduct.discount) {
+        myCopy.querySelector(".discount").classList.remove("hidden");
+    }
 
     //vegetarian
     if (myProduct.vegetarian) {
         myCopy.querySelector(".vegetarian").classList.remove("hidden");
     }
 
-    //discount
-    if (myProduct.discount) {
-        myCopy.querySelector(".discount").classList.remove("hidden");
+    //laktose
+    if (myProduct.allergens) {
+        myCopy.querySelector(".laktose").classList.remove("hidden");
     }
+
 
     //alcohol
     if (myProduct.alcohol) {
@@ -97,25 +103,53 @@ function showProduct(myProduct) {
         article.classList.add("alcohol");
     }
 
+     myCopy.querySelector("button").addEventListener("click", () => {
+    fetch(`https://kea-alt-del.dk/t5/api/product?id=` + myProduct.id)
+      .then(res => res.json())
+      .then(showDetails);
+  });
 
     //append
     const parentElem = document.querySelector("section#" + myProduct.category);
     parentElem.appendChild(myCopy);
 }
 
+//Modal
 const modal = document.querySelector(".modal-background");
-//once we have our data, ....
+
+
 function showDetails(data) {
   console.log(data)
   modal.querySelector(".modal-name").textContent = data.name;
+    modal.querySelector(".modal-short").textContent = data.shortdescription;
   modal.querySelector(".modal-description").textContent = data.longdescription;
-    modal.querySelector(".modal-prize").textContent = data.prize;
+  modal.querySelector(".modal-price").textContent = data.price + "dkk";
+    modal.querySelector(".modal-discount").textContent = data.alcohol + "% off";
+    modal.querySelector(".modal-vegetarian").textContent = data.vegetarian;
+    modal.querySelector(".modal-allergens").textContent = "Allergens: " + data.allergens;
+    modal.querySelector(".modal-alcohol").textContent = "Alcohol: " + data.alcohol + "%";
   modal.classList.remove("hide");
+
+    if (data.alcohol) {
+        data.querySelector(".modal-alcohol").classList.remove("hide");
+    }
+
+    if (data.discount) {
+        modal.querySelector(".modal-discount").classList.remove("hide");
+    }
+
+    if (data.allergens) {
+        modal.querySelector(".modal-allergens").classList.remove("hide");
+    }
+
+    if (data.vegetarian) {
+        modal.querySelector(".modal-vegetarian").classList.remove("hide");
+    }
+
+
 }
-
-
-//close the modal when clicked
 
 modal.addEventListener("click", () => {
   modal.classList.add("hide");
 });
+
