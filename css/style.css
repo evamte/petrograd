@@ -88,8 +88,6 @@ div a:active {
 
 .product_img {
     border-radius: 10px;
-    height: 14rem;
-    width: 22rem;
     background-size: 100%;
 }
 
@@ -139,11 +137,8 @@ h1::first-letter {
 }
 
 main {
-    display: grid;
-    flex-flow: column;
-    margin: 30px;
-    border-radius: 20px;
-
+    max-width: none;
+    margin: 0;
 }
 
 article {
@@ -165,9 +160,8 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-size: 17px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    margin-left: 10px;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .number {
@@ -237,7 +231,7 @@ h3 {
 .short {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     margin-left: 10px;
 }
 
