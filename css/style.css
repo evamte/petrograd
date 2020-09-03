@@ -56,12 +56,16 @@ li a {
     cursor: pointer;
     color: white;
     border-radius: 1000px;
-    background-color: black;
+    background-color: burlywood;
     width: 2px;
     height: 20px;
     padding-right: 80px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+#active:hover {
+    color: gray;
 }
 
 div a:link {
@@ -74,7 +78,7 @@ div a:visited {
 }
 
 div a:hover {
-    color: white;
+    color: gray;
 }
 
 div a:active {
@@ -82,11 +86,9 @@ div a:active {
 }
 
 .product_img {
-    justify-content: center;
-    align-content: center;
-    padding: 10px;
-    border-radius: 30px;
-    margin: auto;
+    border-radius: 10px;
+    height: 14rem;
+    width: 22rem;
 }
 
 .productlist > section {
@@ -94,8 +96,7 @@ div a:active {
     max-width: 1200px;
     margin: auto;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 5px;
-    margin-bottom: 60px;
+    grid-gap: 10px;
 }
 
 .product {
@@ -109,16 +110,18 @@ div a:active {
     display: flex;
     flex: auto;
     flex-direction: column;
-    justify-content: space-between;
+    grid-template-columns: 1 / 1;
+    justify-content: center;
     padding: 10px;
 }
 
 
 h1 {
     font-family: 'Open Sans', sans-serif;
-    text-align: left;
-    text-decoration: underline;
-    text-decoration-color: coral;
+    text-align: center;
+    background-color: burlywood;
+    padding: 5px;
+    border-radius: 10px;
     font-size: 25px;
     letter-spacing: -2px;
     text-transform: uppercase;
@@ -127,6 +130,7 @@ h1 {
 
 h1::first-letter {
     font-size: 35px;
+    color: white;
 }
 
 main {
@@ -145,8 +149,8 @@ article {
 }
 
 img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     justify-content: center;
     text-align: center;
 }
@@ -162,30 +166,31 @@ h3 {
 }
 
 .number {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    background-color: burlywood;
+    border-radius: 20px;
 }
-
 
 .prize {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     margin-left: 10px;
-    justify-content: flex-start;
 }
 
 .discount {
     color: red;
     font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    text-align: right;
-    margin-right: 10px;
+    font-size: 20px;
+    margin-left: 14rem;
+    position: absolute;
 }
 
-.kroner {
-    margin-left: -220px;
+.percentage {
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
 }
 
 
@@ -205,59 +210,33 @@ h3 {
     margin-left: 45px;
 }
 
-.star {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 50px;
-}
-
-.number_starts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-}
-
-
 .icons {
+    display: flex;
     text-align: left;
     max-width: 25px;
     display: inline-flex;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    margin-left: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .vegetarian {
-    padding-right: 20px;
 }
 
-.dots {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-}
 
 .alcohol {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    margin-left: 4px;
 }
 
-img .alcohol {
-    margin-left: 10px;
-}
-
-.laktose {
-    margin-left: 10px;
-}
 
 
 .short {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    text-align: left;
+    text-align: center;
     margin-left: 10px;
 }
 
@@ -265,7 +244,6 @@ img .alcohol {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     text-align: left;
-    margin-left: 10px;
 }
 
 
@@ -280,6 +258,10 @@ img .alcohol {
     font-size: 15px;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.productbody button:hover {
+    font-size: 14px;
 }
 
 .hidden {
@@ -339,4 +321,24 @@ footer {
 
 }
 
+/*THE MODAL*/
+.hide {
+  display: none;
+}
 
+.modal-background {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #7c1f17;
+  margin: 1em;
+  padding: 2em;
+}

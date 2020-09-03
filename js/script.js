@@ -53,12 +53,11 @@ function showProduct(myProduct) {
     img.setAttribute("src", `https://kea-alt-del.dk/t5/site/imgs/small/${myProduct.image}-sm.jpg`);
     //fill in the template
     myCopy.querySelector(".name").textContent = myProduct.name;
-    myCopy.querySelector(".prize").textContent = myProduct.price;
+    myCopy.querySelector(".prize").textContent = myProduct.price + " dkk";
     myCopy.querySelector(".short").textContent = myProduct.shortdescription;
-    myCopy.querySelector(".long").textContent = myProduct.longdescription;
-    myCopy.querySelector(".alcohol").textContent = myProduct.alcohol;
-    myCopy.querySelector(".discount").textContent = myProduct.discount;
-
+    myCopy.querySelector(".alcohol").textContent = myProduct.alcohol + "%";
+    myCopy.querySelector(".discount").textContent = myProduct.discount + "% off";
+    myCopy.querySelector(".laktose").textContent = myProduct.laktose;
 
 
     //vegetarian
@@ -66,10 +65,16 @@ function showProduct(myProduct) {
         myCopy.querySelector(".vegetarian").classList.remove("hidden");
     }
 
-    //laktose
-    if (myProduct.laktose) {
-        myCopy.querySelector(".allergens").classList.remove("hidden");
+    //discount
+    if (myProduct.discount) {
+        myCopy.querySelector(".discount").classList.remove("hidden");
     }
+
+    //alcohol
+    if (myProduct.alcohol) {
+        myCopy.querySelector(".alcohol").classList.remove("hidden");
+    }
+
     //soldout
     if (myProduct.soldout) {
         const p = document.createElement("p");
@@ -87,9 +92,9 @@ function showProduct(myProduct) {
     if (myProduct.laktose) {
         article.classList.add("laktose");
     }
-    //alcohol
+
     if (myProduct.alcohol) {
-        article.classList.add("alcoholic");
+        article.classList.add("alcohol");
     }
 
 
@@ -97,3 +102,20 @@ function showProduct(myProduct) {
     const parentElem = document.querySelector("section#" + myProduct.category);
     parentElem.appendChild(myCopy);
 }
+
+const modal = document.querySelector(".modal-background");
+//once we have our data, ....
+function showDetails(data) {
+  console.log(data)
+  modal.querySelector(".modal-name").textContent = data.name;
+  modal.querySelector(".modal-description").textContent = data.longdescription;
+    modal.querySelector(".modal-prize").textContent = data.prize;
+  modal.classList.remove("hide");
+}
+
+
+//close the modal when clicked
+
+modal.addEventListener("click", () => {
+  modal.classList.add("hide");
+});
