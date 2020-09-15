@@ -51,34 +51,21 @@ function showProduct(myProduct) {
     //img
     const img = myCopy.querySelector(".product_img");
     img.setAttribute("src", `https://kea-alt-del.dk/t5/site/imgs/small/${myProduct.image}-sm.jpg`);
-    //fill in the template
-    myCopy.querySelector(".name").textContent = myProduct.name;
-    myCopy.querySelector(".prize").textContent = myProduct.price + " dkk";
-    myCopy.querySelector(".short").textContent = myProduct.shortdescription;
-    myCopy.querySelector(".alcohol").textContent = myProduct.alcohol + "%";
-    myCopy.querySelector(".discount").textContent = myProduct.discount + "% off";
-    myCopy.querySelector(".laktose").textContent = myProduct.allergens;
-
-
-    //discount
-    if (myProduct.discount) {
-        myCopy.querySelector(".discount").classList.remove("hidden");
-    }
 
     //vegetarian
     if (myProduct.vegetarian) {
-        myCopy.querySelector(".vegetarian").classList.remove("hidden");
-    }
-
-    //laktose
-    if (myProduct.allergens) {
-        myCopy.querySelector(".laktose").classList.remove("hidden");
+       console.log("vegetarian"); myCopy.querySelector(".vegetarian").classList.remove("hidden");
     }
 
 
     //alcohol
     if (myProduct.alcohol) {
-        myCopy.querySelector(".alcohol").classList.remove("hidden");
+       console.log("alcohol"); myCopy.querySelector(".alcohol").classList.remove("hidden");
+    }
+
+    //discount
+    if (myProduct.discount) {
+        myCopy.querySelector(".discount").classList.remove("hidden");
     }
 
     //soldout
@@ -89,25 +76,35 @@ function showProduct(myProduct) {
         myCopy.querySelector("article").appendChild(p);
     }
 
+
     const article = myCopy.querySelector("article");
 
+    //Add classes
     if (myProduct.vegetarian) {
-        article.classList.add("vegetarian");
+        article.classList.add("vegetarian")
     }
 
-    if (myProduct.laktose) {
-        article.classList.add("laktose");
+    if (myProduct.allergens) {
+        article.classList.add("allergens")
     }
 
     if (myProduct.alcohol) {
-        article.classList.add("alcohol");
+        article.classList.add("alcohol")
     }
 
-     myCopy.querySelector("button").addEventListener("click", () => {
-    fetch(`https://kea-alt-del.dk/t5/api/product?id=` + myProduct.id)
-      .then(res => res.json())
-      .then(showDetails);
-  });
+
+    //Fill in the template
+    myCopy.querySelector(".name").textContent = myProduct.name;
+    myCopy.querySelector(".prize").textContent = myProduct.price + " dkk";
+    myCopy.querySelector(".short").textContent = myProduct.shortdescription;
+    myCopy.querySelector(".discount").textContent = myProduct.discount + "% off";
+
+
+    myCopy.querySelector("button").addEventListener("click", () => {
+        fetch(`https://kea-alt-del.dk/t5/api/product?id=` + myProduct.id)
+            .then(res => res.json())
+            .then(showDetails);
+    });
 
     //append
     const parentElem = document.querySelector("section#" + myProduct.category);
@@ -119,19 +116,19 @@ const modal = document.querySelector(".modal-background");
 
 
 function showDetails(data) {
-  console.log(data)
-  modal.querySelector(".modal-name").textContent = data.name;
+    console.log(data)
+    modal.querySelector(".modal-name").textContent = data.name;
     modal.querySelector(".modal-short").textContent = data.shortdescription;
-  modal.querySelector(".modal-description").textContent = data.longdescription;
-  modal.querySelector(".modal-price").textContent = data.price + "dkk";
-    modal.querySelector(".modal-discount").textContent = data.alcohol + "% off";
-    modal.querySelector(".modal-vegetarian").textContent = data.vegetarian;
+    modal.querySelector(".modal-description").textContent = data.longdescription;
+    modal.querySelector(".modal-price").textContent = data.price + "dkk";
+    modal.querySelector(".modal-discount").textContent = data.discount + "% off";
     modal.querySelector(".modal-allergens").textContent = "Allergens: " + data.allergens;
+    modal.querySelector(".modal-vegetarian").textContent = data.vegetarian;
     modal.querySelector(".modal-alcohol").textContent = "Alcohol: " + data.alcohol + "%";
-  modal.classList.remove("hide");
+    modal.classList.remove("hide");
 
     if (data.alcohol) {
-        data.querySelector(".modal-alcohol").classList.remove("hide");
+        modal.querySelector(".modal-alcohol").classList.remove("hide");
     }
 
     if (data.discount) {
@@ -145,11 +142,8 @@ function showDetails(data) {
     if (data.vegetarian) {
         modal.querySelector(".modal-vegetarian").classList.remove("hide");
     }
-
-
 }
 
 modal.addEventListener("click", () => {
-  modal.classList.add("hide");
+    modal.classList.add("hide");
 });
-
